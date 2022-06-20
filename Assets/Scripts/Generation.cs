@@ -27,7 +27,7 @@ public class Generation : MonoBehaviour
 
     private void Start()
     {
-        Random.InitState(74742584);
+        Random.InitState(765);
         Generate();
     }
 
@@ -83,7 +83,54 @@ public class Generation : MonoBehaviour
 
     private void InstantiateRooms()
     {
+        if (_roomsInstantiated)
+            return;
 
+        _roomsInstantiated = true;
+
+        for (int x = 0; x < MapWidth; ++x)
+        {
+            for (int y = 0; y < MapHeihgt; ++y)
+            {
+                if (_map[x, y] == false)
+                    continue;
+
+                GameObject roomObj = Instantiate(RoomPrefab, new Vector3(x, y, 0f) * 12, Quaternion.identity);
+                Room room = roomObj.GetComponent<Room>();
+
+                if (y < MapHeihgt - 1 && _map[x, y + 1] == true)
+                {
+                    room.NorthDoor.gameObject.SetActive(true);
+                    room.NorthWall.gameObject.SetActive(false);
+                }
+
+                if (y > 0 && _map[x, y - 1] == true)
+                {
+                    room.SouthDoor.gameObject.SetActive(true);
+                    room.SouthWall.gameObject.SetActive(false);
+                }
+
+                if (x < MapWidth - 1 && _map[x + 1, y] == true)
+                {
+                    room.EastDoor.gameObject.SetActive(true);
+                    room.EasthWall.gameObject.SetActive(false);
+                }
+
+                if (x > 0 && _map[x-1, y] == true)
+                {
+                    room.WestDoor.gameObject.SetActive(true);
+                    room.WestWall.gameObject.SetActive(false);
+                }
+
+                if(_firstRoomPos != new Vector2(x, y))                
+                    room.GenerateInterior();
+
+                _roomObjects.Add(room);
+            }
+
+        }
+
+        CalculateKeyAndExit();
     }
 
     private void CalculateKeyAndExit()

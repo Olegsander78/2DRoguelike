@@ -2426,11 +2426,11 @@ MonoBehaviour:
   EasthWall: {fileID: 2465746899817740764}
   InsideWidth: 7
   InsideHeight: 7
-  EnemyPrefab: {fileID: 0}
-  CoinPrefab: {fileID: 0}
-  HealthPrefab: {fileID: 0}
-  KeyPrefab: {fileID: 0}
-  ExitDoorPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 135357309475382961, guid: dc0e36c46918c3846b7f20058efa3a85, type: 3}
+  CoinPrefab: {fileID: 868763276203471628, guid: 11d0be327041c6d46be9770f7bff6519, type: 3}
+  HealthPrefab: {fileID: 3563511839757317309, guid: edcbeea9db3d9be42b42389a57dead02, type: 3}
+  KeyPrefab: {fileID: 8536806621893975091, guid: 6f148ccbc9fde2a43a0454e855ad090c, type: 3}
+  ExitDoorPrefab: {fileID: 3857439869567472965, guid: 8cd38e63d08c85347b906dbe5e4c234a, type: 3}
 --- !u!1 &2465746899546093495
 GameObject:
   m_ObjectHideFlags: 0

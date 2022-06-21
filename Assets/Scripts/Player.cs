@@ -106,4 +106,19 @@ public class Player : MonoBehaviour
 
         Sr.color = defaultColor;
     }
+
+    public void AddCoins(int amount)
+    {
+        Coins += amount;
+    }
+
+    public bool Addhealth(int amount)
+    {
+        if (CurHP + amount <= MaxHP)
+        {
+            CurHP += amount;
+            return true;
+        }
+        return false;
+    }
 }

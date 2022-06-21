@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a0ff631964e744ca67139b07b20305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurHP: 7
-  MaxHP: 7
+  CurHP: 6
+  MaxHP: 6
   Coins: 0
   HasKey: 0
   Sr: {fileID: 430461839237803575}

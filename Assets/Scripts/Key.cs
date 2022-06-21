@@ -9,6 +9,7 @@ public class Key : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Player>().HasKey = true;
+            UI.Instance.ToggleKeyIcon(true);
             Destroy(gameObject);
         }
     }

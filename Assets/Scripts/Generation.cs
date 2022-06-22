@@ -34,12 +34,6 @@ public class Generation : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        Random.InitState(765);
-        Generate();
-    }
-
     public void OnPlayerMove()
     {
         Vector2 playerPos = FindObjectOfType<Player>().transform.position;
